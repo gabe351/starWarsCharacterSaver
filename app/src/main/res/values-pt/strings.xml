@@ -14,7 +14,13 @@
     <string name="home_screen.species_option"> Espécies </string>
 
     <string name="characters_screen.title"> Personagens </string>
+    <string name="characters_screen.locallyObjects"> Lista de personagens do banco local </string>
+    <string name="characters_screen.remoteObjects"> Lista de personagens vindas da API</string>
 
     <string name="species_screen.title"> Espécies </string>
+    <string name="species_screen.locallyObjects">Lista de espécies do banco local</string>
+    <string name="species_screen.remoteObjects"> Lista de espécies vindas da API</string>
 
+    <string name="from_database_data">Banco de dados</string>
+    <string name="from_api_data">Dados do servidor</string>
 </resources>

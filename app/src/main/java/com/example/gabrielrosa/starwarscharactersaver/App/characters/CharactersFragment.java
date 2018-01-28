@@ -45,6 +45,16 @@ public class CharactersFragment extends Fragment implements CharactersViewContra
 
     }
 
+    @Override
+    public void setLocalData(View view) {
+        mBinding.charactersListTitle.setText(R.string.characters_screen_locallyObjects);
+    }
+
+    @Override
+    public void setRemoteData(View view) {
+        mBinding.charactersListTitle.setText(R.string.characters_screen_remoteObjects);
+    }
+
     public void mainToolbarSetup(){
         if (mBinding.charactersToolbar != null){
             ((AppCompatActivity) getActivity()).setSupportActionBar(mBinding.charactersToolbar);

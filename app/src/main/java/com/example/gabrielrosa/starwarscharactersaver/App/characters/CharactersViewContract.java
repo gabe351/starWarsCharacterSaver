@@ -9,4 +9,6 @@ import android.view.View;
 public interface CharactersViewContract {
 
     void goToCharacterDetailScreen(View view);
+    void setLocalData(View view);
+    void setRemoteData(View view);
 }

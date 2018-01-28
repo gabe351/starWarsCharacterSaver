@@ -45,6 +45,16 @@ public class SpeciesFragment extends Fragment implements SpeciesViewContract {
 
     }
 
+    @Override
+    public void setLocalData(View view) {
+        mBinding.speciesListTitle.setText(R.string.species_screen_locallyObjects);
+    }
+
+    @Override
+    public void setRemoteData(View view) {
+        mBinding.speciesListTitle.setText(R.string.species_screen_remoteObjects);
+    }
+
     public void mainToolbarSetup(){
         if (mBinding.speciesToolbar != null){
             ((AppCompatActivity) getActivity()).setSupportActionBar(mBinding.speciesToolbar);

@@ -9,4 +9,6 @@ import android.view.View;
 public interface SpeciesViewContract {
 
     void goToSpeciesDetail(View view);
+    void setLocalData(View view);
+    void setRemoteData(View view);
 }
