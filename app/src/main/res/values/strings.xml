@@ -7,4 +7,12 @@
 
     <string name="permission_information_dialog.never_checked_message">You must go to settings click on permissions and allow the following permissions to use the application</string>
     <string name="permission_information_dialog.message">You must accept the following permissions to use the application</string>
+
+    <string name="home_screen.title">Home screen</string>
+    <string name="home_screen.character_option"> Characters </string>
+    <string name="home_screen.species_option"> Species </string>
+
+    <string name="characters_screen.title">Characters</string>
+
+    <string name="species_screen.title">Species</string>
 </resources>

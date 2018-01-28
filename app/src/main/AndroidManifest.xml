@@ -23,11 +23,23 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".App.characters.CharactersActivity">
+
+        </activity>
+
         <activity android:name=".App.charactersdetail.CharactersDetailActivity">
 
         </activity>
 
         <activity android:name=".App.savedcharacters.SavedCharactersActivity">
+
+        </activity>
+
+        <activity android:name=".App.species.SpeciesActivity">
+
+        </activity>
+
+        <activity android:name=".App.speciesdetail.SpeciesDetailActivity">
 
         </activity>
     </application>

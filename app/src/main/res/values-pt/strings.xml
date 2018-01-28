@@ -8,4 +8,13 @@
 
     <string name="permission_information_dialog.message">É necessário aceitar as permissões a seguir para utilizar o aplicativo</string>
     <string name="permission_information_dialog.never_checked_message">Ao clicar no botão você será redirecionado para a tela de detalhes do aplicativo, lá você deve clicar em permissões e aceitar as permissões para utilizar o aplicativo</string>
+
+    <string name="home_screen.title">Tela inicial</string>
+    <string name="home_screen.character_option"> Personagens </string>
+    <string name="home_screen.species_option"> Espécies </string>
+
+    <string name="characters_screen.title"> Personagens </string>
+
+    <string name="species_screen.title"> Espécies </string>
+
 </resources>
