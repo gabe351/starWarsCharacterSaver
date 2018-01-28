@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Star wars character saver</string>
+    <string name="ok_hint">ok</string>
+    <string name="settings">Configurações</string>
+
+    <string name="welcome_text">Bem-vindo, Escolha uma das listas abaixo</string>
+
+    <string name="permission_information_dialog.message">É necessário aceitar as permissões a seguir para utilizar o aplicativo</string>
+    <string name="permission_information_dialog.never_checked_message">Ao clicar no botão você será redirecionado para a tela de detalhes do aplicativo, lá você deve clicar em permissões e aceitar as permissões para utilizar o aplicativo</string>
+</resources>

@@ -14,6 +14,6 @@ public class CharactersDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home_screen_act);
+        setContentView(R.layout.home_act);
     }
 }
