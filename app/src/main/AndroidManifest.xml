@@ -26,6 +26,10 @@
         <activity android:name=".App.charactersdetail.CharactersDetailActivity">
 
         </activity>
+
+        <activity android:name=".App.savedcharacters.SavedCharactersActivity">
+
+        </activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.gabrielrosa.starwarscharactersaver.util;
+package com.example.gabrielrosa.starwarscharactersaver.App.util;
 
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
