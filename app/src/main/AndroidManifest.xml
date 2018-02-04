@@ -27,7 +27,8 @@
 
         </activity>
 
-        <activity android:name=".App.charactersdetail.CharactersDetailActivity">
+        <activity android:name=".App.charactersdetail.CharactersDetailActivity"
+            android:theme="@style/ConstraintTheme">
 
         </activity>
 

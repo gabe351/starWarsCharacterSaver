@@ -69,39 +69,24 @@ public class CharactersFragment extends Fragment implements CharactersContract.V
     private List<Character> buildMockList() {
 
         Character ca = new Character(
-                "guid",
-                "Dan",
-                "height",
+                "Guid",
+                "Name",
                 "mass",
-                "hair color",
-                "eita",
-                "esqueci",
-                "ano de nascimento",
-                "ender"
+                "hair"
         );
 
         Character cb = new Character(
-                "guid",
-                "Gabe",
-                "height",
+                "Guid",
+                "Name",
                 "mass",
-                "hair color",
-                "eita",
-                "esqueci",
-                "ano de nascimento",
-                "ender"
+                "hair"
         );
 
         Character cc = new Character(
-                "guid",
-                "Luke",
-                "height",
+                "Guid",
+                "Name",
                 "mass",
-                "hair color",
-                "eita",
-                "esqueci",
-                "ano de nascimento",
-                "ender"
+                "hair"
         );
 
         List<Character> list = new ArrayList<>();

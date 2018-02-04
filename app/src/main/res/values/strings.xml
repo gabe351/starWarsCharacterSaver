@@ -3,6 +3,9 @@
     <string name="app_name">Star wars character saver</string>
     <string name="ok_hint">ok</string>
     <string name="settings">settings</string>
+    <string name="save">Save </string>
+    <string name="edit">Edit </string>
+    <string name="delete">Delete </string>
 
     <string name="welcome_text">Welcome, please choose one option</string>
 
@@ -23,4 +26,9 @@
 
     <string name="from_database_data">Database List</string>
     <string name="from_api_data">Api List</string>
+
+    <string name="character_detail.mass_hint">Mass </string>
+    <string name="character_detail.hair_hint">Hair color</string>
+
+
 </resources>
