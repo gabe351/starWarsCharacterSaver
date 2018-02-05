@@ -8,18 +8,18 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by gabrielrosa on 28/01/18.
  */
 
-public class DataBase extends SQLiteOpenHelper {
+public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DB_NOME = "AppDb";
-    public static final int VERSION    = 1;
+    public static final int VERSION    = 2;
 
-    private static DataBase INSTANCE;
-    private DataBase(Context context) {
+    private static DBHelper INSTANCE;
+    private DBHelper(Context context) {
         super(context, DB_NOME, null, VERSION);
     }
 
-    private static final String dropCharacterEntry = "DROP TABLE IF EXISTS" + CharacterEntry.table;
-    private static final String dropSpecieEntry    = "DROP TABLE IF EXISTS" + SpecieEntry.table;
+    private static final String dropCharacterEntry = "DROP TABLE IF EXISTS " + CharacterEntry.table;
+    private static final String dropSpecieEntry    = "DROP TABLE IF EXISTS " + SpecieEntry.table;
 
     private static final String createCharacterEntry = String.format(
             "CREATE TABLE %s (" +
@@ -45,9 +45,9 @@ public class DataBase extends SQLiteOpenHelper {
             SpecieEntry.columns.classification,
             SpecieEntry.columns.language);
 
-    public static DataBase getInstance(Context context) {
+    public static DBHelper getInstance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new DataBase(context);
+            INSTANCE = new DBHelper(context);
         }
         return INSTANCE;
     }

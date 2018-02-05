@@ -1,5 +1,6 @@
 package com.example.gabrielrosa.starwarscharactersaver.App.characters;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,12 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.gabrielrosa.starwarscharactersaver.App.addcharacter.AddCharacterActivity;
 import com.example.gabrielrosa.starwarscharactersaver.Domain.entities.Character;
 import com.example.gabrielrosa.starwarscharactersaver.R;
 import com.example.gabrielrosa.starwarscharactersaver.databinding.CharactersFragBinding;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
  * Created by gabrielrosa on 28/01/18.
@@ -26,6 +30,7 @@ public class CharactersFragment extends Fragment implements CharactersContract.V
 
     private CharactersFragBinding mBinding;
     private CharactersAdapter mAdapter;
+    private CharactersContract.Presenter mPresenter;
 
     public CharactersFragment() {}
 
@@ -35,7 +40,8 @@ public class CharactersFragment extends Fragment implements CharactersContract.V
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mAdapter = new CharactersAdapter(getContext(), new ArrayList<Character>(0), this);
+        mAdapter   = new CharactersAdapter(getContext(), new ArrayList<Character>(0), this);
+        mPresenter = new CharactersPresenter(this, getContext());
     }
 
     @Nullable
@@ -51,51 +57,44 @@ public class CharactersFragment extends Fragment implements CharactersContract.V
         mBinding.charactersRecycler.setNestedScrollingEnabled(false);
         mBinding.charactersRecycler.setAdapter(mAdapter);
 
+        mBinding.addCharacterFloatActionButton.setVisibility(View.GONE);
+        mBinding.addCharacterFloatActionButton.setOnClickListener(view -> {
+            goToAddCharacterScreen();
+        });
+
         return mBinding.getRoot();
     }
 
     @Override
     public void setLocalData(View view) {
-        mAdapter.replaceData(buildMockList());
-        mBinding.charactersListTitle.setText(R.string.characters_screen_locallyObjects);
+        mPresenter.loadDataFromDataBase();
     }
 
     @Override
     public void setRemoteData(View view) {
-        mAdapter.replaceData(buildMockList());
+        mPresenter.loadDataFromApi();
+    }
+
+    @Override
+    public void showFromDataBaseLayout(List<Character> characters) {
+        mAdapter.replaceData(characters);
+        mAdapter.setIsFromApi(false);
+        mBinding.addCharacterFloatActionButton.setVisibility(View.VISIBLE);
+        mBinding.charactersListTitle.setText(R.string.characters_screen_locallyObjects);
+    }
+
+    @Override
+    public void showFromApiLayout(List<Character> characters) {
+        mAdapter.replaceData(characters);
+        mAdapter.setIsFromApi(true);
+        mBinding.addCharacterFloatActionButton.setVisibility(View.GONE);
         mBinding.charactersListTitle.setText(R.string.characters_screen_remoteObjects);
     }
 
-    private List<Character> buildMockList() {
-
-        Character ca = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cb = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cc = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        List<Character> list = new ArrayList<>();
-
-        list.add(ca);
-        list.add(cb);
-        list.add(cc);
-
-        return list;
+    @Override
+    public void goToAddCharacterScreen() {
+        Intent intent = new Intent(getContext(), AddCharacterActivity.class);
+        startActivity(intent);
     }
 
     private void mainToolbarSetup(){

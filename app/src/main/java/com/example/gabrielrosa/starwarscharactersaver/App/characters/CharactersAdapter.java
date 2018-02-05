@@ -27,6 +27,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.It
     private List<Character> mCharacters;
     private Context mContext;
     private ItemViewHolder mViewHolder;
+    private Boolean mIsFromApi;
 
     public CharactersAdapter(Context context,
                              List<Character> characters,
@@ -41,6 +42,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.It
         notifyDataSetChanged();
     }
 
+    public void setIsFromApi(Boolean isFromApi) {
+        mIsFromApi = isFromApi;
+    }
 
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -63,6 +67,10 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.It
 
         mViewHolder.mItemBinding.charactersItemCardView.setOnClickListener(view -> {
             Intent intent = new Intent(mContext, CharactersDetailActivity.class);
+            intent.putExtra(CharactersDetailActivity.IS_FROM_API, mIsFromApi);
+            intent.putExtra(CharactersDetailActivity.CHARACTER_NAME, currentCharacter.getName());
+            intent.putExtra(CharactersDetailActivity.CHARACTER_MASS, currentCharacter.getMass());
+            intent.putExtra(CharactersDetailActivity.CHARACTER_HAIR, currentCharacter.getHairColor());
             mContext.startActivity(intent);
         });
     }

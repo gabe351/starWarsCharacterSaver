@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.example.gabrielrosa.starwarscharactersaver.Domain.entities.Specie;
-import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.DataBase;
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.DBHelper;
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.SpecieEntry;
 
 import java.util.ArrayList;
@@ -21,11 +21,11 @@ public class SpeciesLocalDataSource {
 
     private static SpeciesLocalDataSource INSTANCE;
     private SQLiteDatabase db;
-    private DataBase dataBase;
+    private DBHelper DBHelper;
 
     private SpeciesLocalDataSource(Context context) {
-        dataBase = DataBase.getInstance(context);
-        db = dataBase.getWritableDatabase();
+        DBHelper = DBHelper.getInstance(context);
+        db = DBHelper.getWritableDatabase();
     }
 
     private static Specie specieCursor(Cursor c) {

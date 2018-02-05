@@ -23,26 +23,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".App.characters.CharactersActivity">
-
-        </activity>
-
         <activity android:name=".App.charactersdetail.CharactersDetailActivity"
-            android:theme="@style/ConstraintTheme">
+            android:theme="@style/ConstraintTheme"/>
 
-        </activity>
+        <activity android:name=".App.characters.CharactersActivity"/>
 
-        <activity android:name=".App.savedcharacters.SavedCharactersActivity">
+        <activity android:name=".App.addcharacter.AddCharacterActivity"/>
 
-        </activity>
+        <activity android:name=".App.savedcharacters.SavedCharactersActivity"/>
 
-        <activity android:name=".App.species.SpeciesActivity">
+        <activity android:name=".App.species.SpeciesActivity"/>
 
-        </activity>
+        <activity android:name=".App.speciesdetail.SpeciesDetailActivity"/>
 
-        <activity android:name=".App.speciesdetail.SpeciesDetailActivity">
-
-        </activity>
     </application>
 
 </manifest>

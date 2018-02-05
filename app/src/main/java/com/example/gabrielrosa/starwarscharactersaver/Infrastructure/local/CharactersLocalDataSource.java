@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.gabrielrosa.starwarscharactersaver.Domain.entities.Character;
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.CharacterEntry;
-import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.DataBase;
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.DBHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +21,11 @@ public class CharactersLocalDataSource {
 
     private static CharactersLocalDataSource INSTANCE;
     private SQLiteDatabase db;
-    private DataBase dataBase;
+    private DBHelper dbHelper;
 
     private CharactersLocalDataSource(Context context) {
-        dataBase = DataBase.getInstance(context);
-        db = dataBase.getWritableDatabase();
+        dbHelper = DBHelper.getInstance(context);
+        db       = dbHelper.getWritableDatabase();
     }
 
     private static Character charactersCursor(Cursor c) {

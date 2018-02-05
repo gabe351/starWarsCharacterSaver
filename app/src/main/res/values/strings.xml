@@ -27,8 +27,11 @@
     <string name="from_database_data">Database List</string>
     <string name="from_api_data">Api List</string>
 
+    <string name="character_detail.name_hint">Name </string>
     <string name="character_detail.mass_hint">Mass </string>
     <string name="character_detail.hair_hint">Hair color</string>
+
+    <string name="character_form.title">Character Form</string>
 
 
 </resources>

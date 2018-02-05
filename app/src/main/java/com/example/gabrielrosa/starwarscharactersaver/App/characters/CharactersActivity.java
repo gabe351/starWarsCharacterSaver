@@ -2,9 +2,7 @@ package com.example.gabrielrosa.starwarscharactersaver.App.characters;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.WindowManager;
 
-import com.example.gabrielrosa.starwarscharactersaver.App.homescreen.HomeFragment;
 import com.example.gabrielrosa.starwarscharactersaver.App.util.ActivityUtils;
 import com.example.gabrielrosa.starwarscharactersaver.R;
 
