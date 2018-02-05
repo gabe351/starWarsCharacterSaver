@@ -2,7 +2,6 @@ package com.example.gabrielrosa.starwarscharactersaver.App.charactersdetail;
 
 import android.content.Context;
 
-import com.example.gabrielrosa.starwarscharactersaver.App.characters.CharactersContract;
 import com.example.gabrielrosa.starwarscharactersaver.Domain.entities.Character;
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.CharactersLocalDataSource;
 
@@ -32,5 +31,17 @@ public class CharacterDetailPresenter implements CharacterDetailContract.Present
     @Override
     public void delete(Character character) {
         mLocalDataSource.delete(character);
+        mView.showDeleteSuccess();
+    }
+
+    @Override
+    public void save(Character character) {
+        mLocalDataSource.create(character);
+        mView.showSavedSuccess();
+    }
+
+    @Override
+    public void findBy(String guid) {
+        mView.setFields(mLocalDataSource.findByGuid(guid));
     }
 }

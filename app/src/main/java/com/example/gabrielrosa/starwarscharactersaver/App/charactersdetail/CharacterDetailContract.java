@@ -17,11 +17,18 @@ public interface CharacterDetailContract {
 
         void configureFromApiLayout();
         void configureFromDataBaseLayout();
+
+        void showSavedSuccess();
+        void showDeleteSuccess();
+
+        void setFields(Character character);
     }
 
     interface Presenter {
         void setupLayout(boolean isFromApi);
         void delete(Character character);
+        void save(Character character);
+        void findBy(String guid);
     }
 
 }

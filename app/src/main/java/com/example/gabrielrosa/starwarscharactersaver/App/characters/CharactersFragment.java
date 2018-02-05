@@ -94,6 +94,7 @@ public class CharactersFragment extends Fragment implements CharactersContract.V
     @Override
     public void goToAddCharacterScreen() {
         Intent intent = new Intent(getContext(), AddCharacterActivity.class);
+        intent.putExtra(AddCharacterActivity.IS_EDITING, false);
         startActivity(intent);
     }
 

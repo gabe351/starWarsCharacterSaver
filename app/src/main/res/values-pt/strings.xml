@@ -6,6 +6,8 @@
     <string name="save">Salvar </string>
     <string name="edit">Editar </string>
     <string name="delete">Apagar </string>
+    <string name="saved_success">Salvo com sucesso</string>
+    <string name="deleted">Apagado </string>
 
     <string name="welcome_text">Bem-vindo, Escolha uma das listas abaixo</string>
 

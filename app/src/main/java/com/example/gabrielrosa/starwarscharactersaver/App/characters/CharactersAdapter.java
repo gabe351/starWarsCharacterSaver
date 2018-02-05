@@ -68,6 +68,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.It
         mViewHolder.mItemBinding.charactersItemCardView.setOnClickListener(view -> {
             Intent intent = new Intent(mContext, CharactersDetailActivity.class);
             intent.putExtra(CharactersDetailActivity.IS_FROM_API, mIsFromApi);
+            intent.putExtra(CharactersDetailActivity.CHARACTER_GUID, currentCharacter.getGuid());
             intent.putExtra(CharactersDetailActivity.CHARACTER_NAME, currentCharacter.getName());
             intent.putExtra(CharactersDetailActivity.CHARACTER_MASS, currentCharacter.getMass());
             intent.putExtra(CharactersDetailActivity.CHARACTER_HAIR, currentCharacter.getHairColor());
