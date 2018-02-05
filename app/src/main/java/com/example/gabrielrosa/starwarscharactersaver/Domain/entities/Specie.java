@@ -12,6 +12,8 @@ public class Specie {
     private String classification;
     private String language;
 
+    public Specie() {}
+
     public Specie(String guid,
                   String name,
                   String classification,

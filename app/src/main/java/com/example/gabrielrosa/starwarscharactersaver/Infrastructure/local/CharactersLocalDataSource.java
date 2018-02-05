@@ -71,8 +71,8 @@ public class CharactersLocalDataSource {
     public Character update(Character character) {
         ContentValues values = new ContentValues();
         values.put(CharacterEntry.columns.name, character.getName());
-        values.put(CharacterEntry.columns.mass, character.getName());
-        values.put(CharacterEntry.columns.hair, character.getName());
+        values.put(CharacterEntry.columns.mass, character.getMass());
+        values.put(CharacterEntry.columns.hair, character.getHairColor());
         long id = db.update(CharacterEntry.table, values, CharacterEntry.columns.guid+"=?", new String[]{character.getGuid()});
         if (id > 0) {
             return character;

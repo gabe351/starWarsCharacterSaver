@@ -13,7 +13,7 @@ public class DataBase extends SQLiteOpenHelper {
     public static final String DB_NOME = "AppDb";
     public static final int VERSION    = 1;
 
-    private static DataBase instance;
+    private static DataBase INSTANCE;
     private DataBase(Context context) {
         super(context, DB_NOME, null, VERSION);
     }
@@ -46,10 +46,10 @@ public class DataBase extends SQLiteOpenHelper {
             SpecieEntry.columns.language);
 
     public static DataBase getInstance(Context context) {
-        if (instance == null) {
-            instance = new DataBase(context);
+        if (INSTANCE == null) {
+            INSTANCE = new DataBase(context);
         }
-        return instance;
+        return INSTANCE;
     }
 
     @Override
