@@ -2,8 +2,11 @@ package com.example.gabrielrosa.starwarscharactersaver.App.characters;
 
 import android.content.Context;
 
+import com.example.gabrielrosa.starwarscharactersaver.Domain.charactersremotedatasource.CharacterRemoteDataSource;
 import com.example.gabrielrosa.starwarscharactersaver.Domain.entities.Character;
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.CharactersLocalDataSource;
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.remote.CharactersRemoteDataSourceImpl;
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.util.BaseCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +20,6 @@ public class CharactersPresenter implements CharactersContract.Presenter {
     private CharactersContract.View mView;
     private CharactersLocalDataSource mLocalDataSource;
 
-
     public CharactersPresenter(CharactersContract.View view, Context context) {
         mView            = view;
         mLocalDataSource = CharactersLocalDataSource.getInstance(context);
@@ -26,91 +28,23 @@ public class CharactersPresenter implements CharactersContract.Presenter {
 
     @Override
     public void loadDataFromApi() {
-        mView.showFromApiLayout(buildMockList());
+        CharacterRemoteDataSource characterRemoteDataSource = new CharactersRemoteDataSourceImpl();
+        characterRemoteDataSource.getCharacters(new BaseCallback.ApiCaseCallback<List<Character>>() {
+            @Override
+            public void onSuccess(List<Character> response) {
+                mView.showFromApiLayout(response);
+            }
+
+            @Override
+            public void onError() {
+
+            }
+        });
+
     }
 
     @Override
     public void loadDataFromDataBase() {
         mView.showFromDataBaseLayout(mLocalDataSource.All());
-    }
-
-    private List<Character> buildMockList() {
-
-        Character ca = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cb = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cc = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cd = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character ce = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cf = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character cg = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character ch = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        Character ci = new Character(
-                "Guid",
-                "Name",
-                "mass",
-                "hair"
-        );
-
-        List<Character> list = new ArrayList<>();
-
-        list.add(ca);
-        list.add(cb);
-        list.add(cc);
-        list.add(cd);
-        list.add(ce);
-        list.add(cf);
-        list.add(cg);
-        list.add(ch);
-        list.add(ci);
-
-        return list;
     }
 }

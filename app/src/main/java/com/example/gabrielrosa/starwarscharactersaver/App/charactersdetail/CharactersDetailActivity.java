@@ -107,7 +107,7 @@ public class CharactersDetailActivity extends AppCompatActivity implements Chara
     @Override
     protected void onResume() {
         super.onResume();
-        mPresenter.findBy(characterGuid);
+//        mPresenter.findBy(characterGuid);
     }
 
     private void setUpView() {
