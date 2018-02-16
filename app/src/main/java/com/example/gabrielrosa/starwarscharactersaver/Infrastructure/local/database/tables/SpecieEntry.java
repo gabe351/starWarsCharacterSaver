@@ -1,4 +1,4 @@
-package com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database;
+package com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.tables;
 
 /**
  * Created by gabrielrosa on 28/01/18.

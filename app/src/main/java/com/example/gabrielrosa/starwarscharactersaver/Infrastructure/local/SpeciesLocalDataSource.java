@@ -7,7 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.gabrielrosa.starwarscharactersaver.Domain.entities.Specie;
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.DBHelper;
-import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.SpecieEntry;
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.tables.SpecieEntry;
 
 import java.util.ArrayList;
 import java.util.List;

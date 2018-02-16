@@ -4,6 +4,9 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.tables.CharacterEntryOld;
+import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.tables.SpecieEntry;
+
 /**
  * Created by gabrielrosa on 28/01/18.
  */
@@ -18,7 +21,7 @@ public class DBHelper extends SQLiteOpenHelper {
         super(context, DB_NOME, null, VERSION);
     }
 
-    private static final String dropCharacterEntry = "DROP TABLE IF EXISTS " + CharacterEntry.table;
+    private static final String dropCharacterEntry = "DROP TABLE IF EXISTS " + CharacterEntryOld.table;
     private static final String dropSpecieEntry    = "DROP TABLE IF EXISTS " + SpecieEntry.table;
 
     private static final String createCharacterEntry = String.format(
@@ -27,11 +30,11 @@ public class DBHelper extends SQLiteOpenHelper {
                     "%s TEXT NOT NULL," +
                     "%s TEXT NOT NULL," +
                     "%s TEXT NOT NULL)",
-            CharacterEntry.table,
-            CharacterEntry.columns.guid,
-            CharacterEntry.columns.name,
-            CharacterEntry.columns.mass,
-            CharacterEntry.columns.hair);
+            CharacterEntryOld.table,
+            CharacterEntryOld.columns.guid,
+            CharacterEntryOld.columns.name,
+            CharacterEntryOld.columns.mass,
+            CharacterEntryOld.columns.hair);
 
     private static final String createSpecieEntry = String.format(
             "CREATE TABLE %s (" +

@@ -8,7 +8,6 @@ import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.Chara
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.remote.CharactersRemoteDataSourceImpl;
 import com.example.gabrielrosa.starwarscharactersaver.Infrastructure.util.BaseCallback;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

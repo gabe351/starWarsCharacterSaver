@@ -1,10 +1,10 @@
-package com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database;
+package com.example.gabrielrosa.starwarscharactersaver.Infrastructure.local.database.tables;
 
 /**
  * Created by gabrielrosa on 28/01/18.
  */
 
-public class CharacterEntry {
+public class CharacterEntryOld {
 
     public static final String table = "character";
 
@@ -16,10 +16,10 @@ public class CharacterEntry {
     }
 
     public static final String[] columnList = {
-            CharacterEntry.columns.guid,
-            CharacterEntry.columns.name,
-            CharacterEntry.columns.mass,
-            CharacterEntry.columns.hair
+            CharacterEntryOld.columns.guid,
+            CharacterEntryOld.columns.name,
+            CharacterEntryOld.columns.mass,
+            CharacterEntryOld.columns.hair
     };
 
 }
